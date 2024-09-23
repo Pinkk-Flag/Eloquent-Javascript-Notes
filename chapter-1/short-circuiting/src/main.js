@@ -1,0 +1,12 @@
+console.log(null || "user"); 
+// → "user"
+console.log("Agnes" || "user"); 
+// → "Agnes"
+console.log(false && "something");
+// → false
+console.log("Agnes" && "OK");
+// → "OK"
+console.log(0 ?? 100);
+// → 0
+console.log(null ?? 100);
+// → 100
