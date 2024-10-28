@@ -33,4 +33,8 @@ console.log(dateTime.test("1-30-2003 8:45"));
 let cartoonCrying = /boo+(hoo+)+/i;
 console.log(cartoonCrying.test("bOoOoOhOohOOO"));
 
+// # Matches and groups
+// Using the .match method will show you wthe thing that matches with the regex.
 
+// Date class
+console.log(new Date());
