@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat!</title>
+</head>
+<body>
+    <p style="text-align: center">
+        <img src="img/chocola2.png" style="position: relative">
+        <img src="img/fish.png" width="125" style="position: relative">
+    </p>
+    <script>
+        let images = document.querySelectorAll("img")
+        let cat = images[0]
+        let fish = images[1]
+        let angle = Math.PI / 2;
+        function animate(time, lastTime) {
+            if (lastTime != null) {
+                angle += (time - lastTime) * 0.001;
+            }
+            cat.style.top = (Math.sin(angle) * 40) + "px";
+            cat.style.left = (Math.cos(angle) * 400) + "px";
+            fish.style.top = (Math.sin(-angle) * 60) + "px";
+            fish.style.left = (Math.cos(-angle) * 400) + "px";
+            requestAnimationFrame(newTime => animate(newTime, time));
+        }
+        requestAnimationFrame(animate);
+    </script>
+</body>
+</html>
