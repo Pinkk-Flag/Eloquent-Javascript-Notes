@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>A paragraph with a <button>button</button>.</p>
+ <script>
+    let para = document.querySelector("p");
+    let button = document.querySelector("button"); 
+    para.addEventListener("mousedown", () => {
+        alert("Handler for paragraph."); });
+    button.addEventListener("mousedown", event => { alert("Handler for button.");
+    if (event.button == 2) event.stopPropagation();
+    });
+
+    // You can see that when you click on the paragraph, it's handler occurs first (it's the only one.)
+    // However, when you do it on the button, it happens first and THEN the paragraph.
+
+    
+ </script>
+
+</body>
+</html>
