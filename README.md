@@ -22,14 +22,14 @@ You may feel free to look at my code reuse it, or do anything you wish to do wit
 - [x] Chapter  12
 - [x] Chapter  13
 - [x] Chapter  14
-- [x] Chapter  15
-- [] Chapter  16
-- [] Chapter  17
-- [] Chapter  18
-- [] Chapter  19
-- [] Chapter  20
-- [] Chapter  21
-- [] Chapter  22
+- [ ] Chapter  15
+- [ ] Chapter  16
+- [ ] Chapter  17
+- [ ] Chapter  18
+- [ ] Chapter  19
+- [ ] Chapter  20
+- [ ] Chapter  21
+- [ ] Chapter  22
 
 ### Why?
 After I finished learning Rust (reference my repository where I took notes on the Rust book), I decided to pick up some Javascript. I decided to do it on the book "Eloquent Javascript" by Marijn Haverbeke. All credit goes to him for making this book. 
