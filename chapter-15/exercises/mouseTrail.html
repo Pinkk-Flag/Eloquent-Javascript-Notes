@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Trail</title>
+</head>
+<body>
+    <style>
+        .dot {
+            height: 8px;
+            width: 8px;
+            background: teal;
+            position: absolute;
+            border-radius: 4px;
+            opacity: 1;
+            transition: opacity 0.1s ease;
+        }
+
+    </style>
+    <script>
+        function mouseMoveEvent(event) {
+            let dot = document.createElement("div");
+            dot.className = "dot";
+            dot.style.left = (event.pageX - 4) + "px"; 
+            dot.style.top = (event.pageY - 4) + "px"; 
+            document.body.appendChild(dot);
+            setTimeout(() => {
+                document.body.removeChild(dot);
+            }, 500);
+        }
+
+        window.addEventListener("mousemove", mouseMoveEvent)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!-- This code is not mine!!!-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Mouse Trail</title>
+</head>
+<body>
+    <style>
+        .dot {
+            height: 8px;
+            width: 8px;
+            background: teal;
+            position: absolute;
+            border-radius: 4px;
+            pointer-events: none; /* Prevent interference with mouse events */
+        }
+    </style>
+    <script>
+        let lastX = null;
+        let lastY = null;
+
+        function createDot(x, y) {
+            const dot = document.createElement("div");
+            dot.className = "dot";
+            dot.style.left = (x - 4) + "px"; 
+            dot.style.top = (y - 4) + "px"; 
+            document.body.appendChild(dot);
+
+            setTimeout(() => {
+                document.body.removeChild(dot);
+            }, 100);
+        }
+
+        function interpolateTrail(event) {
+            const currentX = event.pageX;
+            const currentY = event.pageY;
+
+            if (lastX !== null && lastY !== null) {
+                const dx = currentX - lastX;
+                const dy = currentY - lastY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const steps = Math.ceil(distance / 5); // Adjust '5' for density
+
+                for (let i = 1; i <= steps; i++) {
+                    const interpolatedX = lastX + (dx * i) / steps;
+                    const interpolatedY = lastY + (dy * i) / steps;
+                    createDot(interpolatedX, interpolatedY);
+                }
+            }
+
+            lastX = currentX;
+            lastY = currentY;
+        }
+
+        window.addEventListener("mousemove", interpolateTrail);
+    </script>
+</body>
+</html>
